@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/style.css'%}">
+    <title>slider</title>
+</head>
+
+<body>
+    <section>
+        <div class="slider">
+
+            {% for data in all_data %}
+
+            <div class="slide active" style=" background: url('{{data.image.url}}') center / cover
+            no-repeat; ">
+                <h1>{{data.title}}</h1>
+            </div>
+
+
+            {% endfor %}
+            <!-- 
+            <div class="slide  active" style=" background: url('/static/img/blog-1.png') center / cover
+                no-repeat; ">
+                <h1>Hello slide 1</h1>
+            </div>
+            <div class=" slide " style=" background: url('/static/img/blog-2.png') center / cover
+            no-repeat; ">
+                <h1>Hello slide 2</h1>
+            </div>
+            <div class="slide " style=" background: url('/static/img/blog-3.png') center / cover
+            no-repeat; ">
+                <h1>Hello slide 3</h1>
+            </div>
+            <div class="slide " style=" background: url('/static/img/poster-1.png') center / cover
+            no-repeat; ">
+                <h1>Hello slide 4</h1>
+            </div>
+            <div class="slide  " style=" background: url('/static/img/poster-3.png') center / cover no-repeat; ">
+                <h1>Hello slide 5</h1>
+            </div> -->
+        </div>
+        <div class="buttons">
+            <div class="previous">
+                <ion-icon name="arrow-back-circle-outline"></ion-icon>
+            </div>
+            <div class="next">
+                <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+            </div>
+
+        </div>
+        <div class="dots"></div>
+
+    </section>
+
+
+    <script src="{% static 'js/main.js'%}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

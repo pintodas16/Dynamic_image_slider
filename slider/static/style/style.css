@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "monserrat", sans-serif;
+  font-size: 1.5rem;
+}
+section {
+  height: 100vh;
+  width: 100%;
+  /* background: red; */
+}
+.slider {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+.slide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  /* z-index: -1; */
+  background-size: cover;
+  background-repeat: none;
+  transform: translateX(100%);
+}
+.slide.active {
+  transform: translateX(0%);
+}
+.slide.top {
+  transition: 0.3s ease transform;
+}
+.slide::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.685);
+  z-index: -1;
+}
+/* .slide-1 {
+  background: url("./img/blog-1.png");
+
+  background-repeat: none;
+  background-size: cover; 
+}*/
+/* .slide-2 {
+  background: url("./img/blog-2.png");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+.slide-3 {
+  background: url("./img/blog-3.png");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+.slide-4 {
+  background: url("./img/folder-img.jpeg");
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+}
+.slide-5 {
+  background: url("./img/poster-1.png");
+  
+  background-repeat: none;
+  background-size: contain;
+} */
+
+/* button style  */
+.buttons {
+  /* position: absolute; */
+  z-index: 5;
+  display: flex;
+  flex-direction: row-reverse;
+  color: white;
+  font-size: 1.5rem;
+  width: auto;
+  height: auto;
+}
+.buttons div {
+  cursor: pointer;
+  pointer-events: all;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.274);
+}
+.next {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+}
+.previous {
+  position: absolute;
+  top: 50%;
+  right: 0%;
+}
+.buttons div:hover {
+  background: white;
+  color: black;
+}
+.dots {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translate(-50%);
+}
+.dots .dot {
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.185);
+  margin-left: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s ease width;
+}
+.dots .dot.active {
+  background-color: white;
+}
